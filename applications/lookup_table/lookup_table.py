@@ -15,7 +15,11 @@ def slowfun(x, y):
     output, but completes quickly instead of taking ages to run.
     """
     # Your code here
-
+    if (x, y) in lookup_table.keys():
+        return lookup_table[(x, y)]
+    else:
+        lookup_table[(x, y)] = slowfun_too_slow(x, y)
+        return lookup_table[(x, y)]
 
 
 # Do not modify below this line!
